@@ -49,7 +49,7 @@ module.exports = app
   .use(passport.session())
 
   // Serve static files from ../public
-  .use(express.static(resolve(__dirname, '..', 'public')))
+  .use(express.static(resolve(__dirname, '..', 'bundle')))
 
   // Serve our api - ./api also requires in ../db, which syncs with our database
   .use('/api', require('./api'))

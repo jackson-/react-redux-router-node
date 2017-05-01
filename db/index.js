@@ -1,14 +1,15 @@
 'use strict'
-const app = require('APP')
-    , debug = require('debug')(`${app.name}:db`) // DEBUG=your_app_name:db
-    , chalk = require('chalk')
-    , Sequelize = require('sequelize')
 
-    , name = (app.env.DATABASE_NAME || app.name) +
-             (app.isTesting ? '_test' : '')
-    , url = app.env.DATABASE_URL || `postgres://localhost:5432/${name}`
+const app = require('APP')
+const debug = require('debug')(`${app.name}:db`) // DEBUG=your_app_name:db
+const chalk = require('chalk')
+const Sequelize = require('sequelize')
+
+const name = (app.env.DATABASE_NAME || app.name) + (app.isTesting ? '_test' : '')
+const url = app.env.DATABASE_URL || `postgres://localhost:5432/${name}`
 
 debug(chalk.yellow(`Opening database connection to ${url}`))
+
 const db = module.exports = new Sequelize(url, {
   logging: require('debug')('sql'),  // export DEBUG=sql in the environment to
                                      // get SQL queries
