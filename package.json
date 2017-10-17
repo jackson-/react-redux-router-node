@@ -1,7 +1,7 @@
 {
   "version": "0.1.0",
   "private": true,
-  "name": "test",
+  "name": "shatner",
   "author": "YOUR_NAME_HERE",
   "repository": {
     "type": "git",
@@ -23,7 +23,7 @@
   },
   "proxy": "http://localhost:1337/",
   "scripts": {
-    "start": "concurrently \"npm start\" \"node scripts/start.js\"",
+    "start": "concurrently \"npm serve-dev\" \"node scripts/start.js\"",
     "build": "node scripts/build.js",
     "test-react": "node scripts/test.js --env=jsdom",
     "dev": "node dev",
@@ -59,6 +59,7 @@
     "express": "^4.14.0",
     "finalhandler": "^1.0.0",
     "homedir": "^0.6.0",
+    "knex": "^0.13.0",
     "passport": "^0.3.2",
     "passport-linkedin": "^1.0.0",
     "passport-local": "^1.0.0",
